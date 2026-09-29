@@ -1,0 +1,65 @@
+ARTI 303 - Programming for AI
+Lab 4 - Task 2: Variables in Prolog
+Queries, Results, and Explanations
+
+25 ?- consult(['c:/Users/itswelaya/OneDrive - IMAM ABDULRAHMAN BIN FAISAL UNIVERSITY/Desktop/Task2.pl']).
+true.
+
+26 ?- female(X).
+X = sara ;
+X = nora.
+
+Explanation:
+This query finds all females in the family knowledge base.
+The results show that Sara and Nora are female.
+
+
+27 ?- male(_).
+true .
+
+Explanation:
+This query checks whether at least one male exists in the
+knowledge base. The underscore represents an anonymous variable.
+The result is true because male facts exist.
+
+
+28 ?- parent(X,Y), parent(Y,faisal).
+X = ali,
+Y = muhammad .
+
+Explanation:
+This query finds the grandparent of Faisal.
+Ali is the parent of Muhammad, and Muhammad is the parent
+of Faisal. Therefore, Ali is Faisal's grandparent.
+
+
+29 ?- parent(ahmad,X), female(X).
+X = sara ;
+X = nora .
+
+Explanation:
+This query finds all daughters of Ahmad.
+It checks which of Ahmad's children are female.
+The results show that Sara and Nora are his daughters.
+
+
+30 ?- parent(X,ahmad), parent(X,muhammad).
+X = ali.
+
+Explanation:
+This query checks whether Ahmad and Muhammad have a common
+parent. The result shows that Ali is the parent of both,
+so they share the same parent.
+
+
+31 ?- male(khan), parent(P,khan), parent(P,nora).
+P = ahmad.
+
+Explanation:
+This query checks whether Khan is Nora's brother.
+It verifies that Khan is male and that Khan and Nora
+share the same parent, Ahmad. Therefore, Khan is
+Nora's brother.
+
+
+32 ?-

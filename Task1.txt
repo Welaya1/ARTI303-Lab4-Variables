@@ -1,0 +1,54 @@
+
+12 ?- consult(['c:/Users/itswelaya/OneDrive - IMAM ABDULRAHMAN BIN FAISAL UNIVERSITY/Desktop/Task1.pl']).
+true.
+
+13 ?- house = house.
+true.
+Both terms are the same atom house, so they can be unified.
+
+14 ?- house = abc.
+false.
+house and abc are different atoms, so they cannot be unified.
+
+15 ?- edge(a,b) = edge(C,b).
+C = a.
+Both structures have the same functor edge and the same number of arguments. The second arguments are both b, so C must be unified with a.
+
+16 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+The structures have the same functor and number of arguments. Therefore, C is unified with a and B is unified with d.
+
+
+17 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+Variables can be unified with the corresponding constants, so C = a and B = d.
+
+
+18 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+The edge structures match. A is unified with a, and B is unified with the structure f(g,h).
+
+
+19 ?- edge(A,A) = edge(b,c).
+false.
+The same variable A occurs in both positions, so both arguments must be equal. However, b and c are different constants, so unification fails.
+
+
+20 ?- edge(A,A) = edge(b,b).
+A = b.
+Both arguments on the right are b, so the same variable A can be unified with b in both positions.
+
+
+21 ?- A = B, B = f.
+A = B, B = f.
+A is unified with B, and then B is unified with f. Therefore, both A and B become f.
+
+
+22 ?- A = B, B = f, A = e.
+false.
+First, A and B become the same variable. Then both become f. The final condition requires A = e, but f and e are different constants, so unification fails.
+
+23 ?- 
